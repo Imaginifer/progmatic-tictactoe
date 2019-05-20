@@ -78,7 +78,10 @@ public class VictoryAwarePlayerImpl extends AbstractPlayer{
                         || b.getCell(cell.getRow(), 2)==myType)
                         || cell.getRow()==1 
                         && (b.getCell(0, cell.getCol())==myType
-                        || b.getCell(2, cell.getCol())==myType)){
+                        || b.getCell(2, cell.getCol())==myType)
+                        || (cell.getRow()==1 && cell.getCol()==1)
+                        && (b.getCell(0, 0)==myType || b.getCell(0, 2)==myType
+                        || b.getCell(2, 0)==myType) || b.getCell(2, 2)==myType){
                     return new Cell(cell.getRow(), cell.getCol(), myType);
                 }
             }
